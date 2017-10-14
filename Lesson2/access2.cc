@@ -20,6 +20,14 @@ public:
 	}
 };
 
+struct S1: C {
+	S1() {
+		int a1 = a;  // ??
+		int b1 = b;  // ??
+		int c1 = c;  // ??
+	}
+};
+
 class D2: protected C {
 public:
 	D2() {
@@ -39,5 +47,13 @@ public:
 };
 
 int main(int argc, char* argv[]) {
+	D1 d;
+	d.a;  // ??
+	d.b;  // ??
+	d.c;  // ??
+	S1 s;
+	s.a;	// ??
+	s.b;	// ??
+	s.c;	// ??
 	return 0;
 }
