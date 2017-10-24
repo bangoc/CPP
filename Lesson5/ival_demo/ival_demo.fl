@@ -1,0 +1,25 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+Function {make_slider()} {open
+} {
+  Fl_Window {} {open
+    xywh {418 324 455 85} type Double visible
+  } {
+    Fl_Value_Slider mySlider {
+      xywh {25 25 405 30} type Horizontal maximum 100 step 1
+    }
+  }
+}
+
+Function {make_dial()} {open
+} {
+  Fl_Window {} {open
+    xywh {503 164 465 440} type Double visible
+  } {
+    Fl_Dial myDial {selected
+      xywh {30 5 410 415} align 34 minimum 100 maximum 1000 step 1
+    }
+  }
+}
