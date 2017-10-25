@@ -3,17 +3,28 @@
 
 #include <iostream>
 template<typename T>
-  class B {};
+  class B {
+  public:
+    virtual void Foo() {
+      std::cout << "B::foo()" << std::endl;
+    }
+  };
 
 template<typename T>
-  class D: public B<T> {};
+  class D: public B<T> {
+  public:
+    void Foo() override {
+      std::cout << "D::foo()" << std::endl;
+    }
+  };
 
 template<typename T>
-  void f(B<T>*) {
+  void f(B<T>* obj) {
     std::cout << __PRETTY_FUNCTION__ << std::endl;
+    obj->Foo();
   }
 
 int main() {
   f(new B<int>);
-  f(new D<int>);
+  f(new D<double>);
 }

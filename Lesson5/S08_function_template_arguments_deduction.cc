@@ -33,8 +33,10 @@ T* create () {
 
 int main() {
   Buffer<C, 100> b;
-  Foo(b);
+  Foo(b); // 4. ??
+  Foo<C, 200>(b); // 5. ??
 
   int* p = create<int>();  // 1. ??
-  int q = create();  // 2. ??
+  // int q = create();  // 2. ??
+  // int* pp = create();  // 3. ?? | ??
 }

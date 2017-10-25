@@ -14,7 +14,7 @@ public:
 
   static int m2;  // Static data member
 
-  static C<T>* getInstance();  // Static function member
+  static C* getInstance();  // Static function member
 
   enum class E1 {a, b};  // Member types
 
@@ -24,7 +24,9 @@ public:
 
   // enum E4;  // compile error
 
-  C(const C<T>& c);
+  C() {}
+
+  C(const C& c);
 
   template<typename T2>  // member templates
   void compile(T2 obj);
@@ -58,5 +60,13 @@ C<T> operator*(const C<T>& c1, const C<T>& c2) {
 }
 
 int main() {
+  C<int> c1;
+ // c1.value_type;
+  C<int>::value_type i;
+  // C<int>::E3 e = C<int>::E3.c;
+  C<int>::E3 e2 = C<int>::E3::c;
+  C<int>::E3 e3 = C<int>::c;
 
+  C<int>::E1 e4 = C<int>::E1::a;
+  C<int>::E1 e5 = C<int>::a;
 }

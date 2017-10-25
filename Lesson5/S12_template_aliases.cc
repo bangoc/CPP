@@ -15,11 +15,12 @@ class MyVector {};
 using Cvec = MyVector<char>;
 typedef MyVector<char> CvecT;
 
-// template<typename T>   // error
-// using Vec = MyVector<T, My_alloc<T>>;
-
 template<typename T>
-typedef MyVector<T, My_alloc<T>> VecT;
+using Vec = MyVector<T, My_alloc<T>>;
+
+// template<typename T>   // Error
+// typedef MyVector<T, My_alloc<T>> VecT;
+// typedef MyVector VecT;
 
 template<typename T, typename A>
 void Foo(MyVector<T, A>& v) {
