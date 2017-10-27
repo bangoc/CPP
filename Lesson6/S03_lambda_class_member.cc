@@ -2,6 +2,7 @@
 
 class C {
 private:
+  static int st_i;
   int m_i;
 public:
   void Run() {
@@ -15,6 +16,7 @@ public:
       std::cout << "l1: " << std::endl;
       // std::cout << ii << std::endl;  // 1. ??
       std::cout << m_i << std::endl;  // 2. ??
+      std::cout << st_i << std::endl; // 3. ??
     };
     l1();
 
@@ -23,8 +25,9 @@ public:
 
       std::cout << "l2: " << std::endl;
       // ii = 1000;  //  ??
-      std::cout << ii << std::endl;  // 3. ??
-      std::cout << m_i << std::endl;  // 4. ??
+      std::cout << ii << std::endl;  // 4. ??
+      std::cout << m_i << std::endl;  // 5. ??
+      this->m_i = 101;  // 6. ??
     };
     l2();
 
@@ -61,6 +64,8 @@ public:
     std::cout << "(" << ii << " + " << ii2 << ")/3 = " << l6(ii, ii2) << std::endl;
   }
 };
+
+int C::st_i = 100;
 
 int main() {
   C c;

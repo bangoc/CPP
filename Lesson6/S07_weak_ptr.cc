@@ -43,14 +43,20 @@ int main() {
   }
 
   std::cout << "Scope 2" << std::endl;
-  std::shared_ptr<C> sp2 = std::make_shared<C>("C2");
+  std::weak_ptr<C> w2;
   {
-    std::weak_ptr<C> w2(sp2);
+    std::shared_ptr<C> sp2 = std::make_shared<C>("C2");
+    w2 = sp2;
     if (w2.lock()) {
       std::cout << "Not destroyed" << std::endl;
     } else {
       std::cout << "Destroyed" << std::endl;
     }
+  }
+  if (w2.lock()) {
+    std::cout << "Not destroyed" << std::endl;
+  } else {
+    std::cout << "Destroyed" << std::endl;
   }
 
   std::cout << "Scope 3" << std::endl;

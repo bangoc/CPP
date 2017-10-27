@@ -35,7 +35,7 @@ int main() {
     std::cout << "Scope 2" << std::endl;
     std::unique_ptr<C> pc(new C{});
     // std::unique_ptr<C> p1 = pc;  // ??
-    std::unique_ptr<C> p2;
+    std::unique_ptr<C> p2(new C{"CCC333"});
     p2.reset(new C{});
     std::unique_ptr<C> p3;
     p3 = std::move(p2);

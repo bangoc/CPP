@@ -34,10 +34,14 @@ public:
 };
 
 int main() {
-  std::shared_ptr<C> sp1(new C{});
-  Foo(sp1);
+  {
+    std::shared_ptr<C> sp1(new C{});
+    Foo(sp1);
 
-  std::cout << "Use count after Foo = " << sp1.use_count() << std::endl;
+    std::cout << "Use count after Foo = " << sp1.use_count() << std::endl;
+  }
+
+  std::cout << "Scope 2" << std::endl;
 
   std::shared_ptr<B> b1 {new B()};
   std::shared_ptr<B> b2 {new B()};
