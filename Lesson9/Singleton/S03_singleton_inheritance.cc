@@ -11,7 +11,7 @@ class Log {
  private:
   static Log* instance;
   Log() {
-    std::cout << "Log object created" << std::endl;
+    std::cout << "Creating a log object" << std::endl;
 
     if (instance) {
       throw std::logic_error("An instance of Log exists!");
@@ -103,7 +103,7 @@ void Usage2() {
 }
 
 int main() {
-  Log::getInstance()->DoSomething();
+  // Log::getInstance()->DoSomething();
 
   try {
     Usage1();

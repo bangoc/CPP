@@ -8,4 +8,7 @@ set(adapter_SRCS
     class_adapter/TextShape.cpp
     object_adapter/TextShape.cpp)
 
-add_library(adapter STATIC ${adapter_SRCS})
+add_library(adapter_pattern STATIC ${adapter_SRCS})
+
+add_executable(adapter adapter_main.cc)
+target_link_libraries(adapter adapter_pattern)
