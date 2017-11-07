@@ -4,6 +4,8 @@
 #include "VisualComponent.h"
 
 class TextView : public VisualComponent {
+public:
+  void Draw() override;
 };
 
 #endif /* TEXT_VIEW_H */

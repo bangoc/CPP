@@ -6,7 +6,8 @@ set(decorator_SRCS
     Decorator.cpp
     ScrollDecorator.cpp
     VisualComponent.cpp
-    Window.cpp)
+    Window.cpp
+    TextView.cc)
 
 add_library(decorator STATIC ${decorator_SRCS})
 

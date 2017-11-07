@@ -19,4 +19,12 @@ int main() {
     );
 
     window->Draw();
+
+    TextView* textView2 = new TextView;
+    VisualComponent* component2 = new ScrollDecorator(textView);
+    component2->Draw();
+
+    TextView* textView3 = new TextView;
+    VisualComponent* component3 = new BorderDecorator(textView, 3);
+    component3->Draw();
 }
