@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(final_task)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+add_executable(gensv gensv.cpp)
+add_executable(final_task final_part1_sol.cc)
+add_executable(hw3 hw3_sol.cc)
+target_link_libraries(final_task pthread)
