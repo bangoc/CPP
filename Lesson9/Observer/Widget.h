@@ -3,7 +3,7 @@
 
 class Widget {
 public:
-    virtual void Draw() = 0;
+  virtual void Draw() = 0;
 };
 
 #endif  // WIDGET_H_

@@ -9,17 +9,14 @@ class Subject;
 
 class DigitalClock: public Widget, public Observer {
 public:
-    DigitalClock(ClockTimer*);
-    virtual ~DigitalClock();
+  DigitalClock(ClockTimer*);
+  ~DigitalClock() override;
 
-    virtual void Update(Subject*);
-        // overrides Observer operation
+  void Update(Subject*) override;
 
-    virtual void Draw();
-        // overrides Widget operation;
-        // defines how to draw the digital clock
+  void Draw() override;
 private:
-    ClockTimer* _subject;
+  ClockTimer* subject_;
 };
 
 #endif /* DIGITAL_CLOCK_H */

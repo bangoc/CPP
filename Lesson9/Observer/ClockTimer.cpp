@@ -3,26 +3,29 @@
 #include <ctime>
 #include <chrono>
 
+ClockTimer::ClockTimer():
+  hour_{0}, minute_{0}, second_{0} {
+}
+
 void ClockTimer::Tick () {
-    // update internal time-keeping state
-    // ...
-    Notify();
+  std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+  std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+  std::tm* now_tm = std::localtime(&now_c);
+  hour_ = now_tm->tm_hour;
+  minute_ = now_tm->tm_min;
+  second_ = now_tm->tm_sec;
+
+  Notify();
 }
 
-std::tm* GetTimeNow_C() {
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    return std::localtime(&now_c);
+int ClockTimer::GetHour() {
+  return hour_;
 }
 
-int ClockTimer::GetHour() { 
-    return GetTimeNow_C()->tm_hour + 1;
+int ClockTimer::GetMinute() {
+  return minute_;
 }
 
-int ClockTimer::GetMinute() { 
-    return GetTimeNow_C()->tm_min;    
-}
-
-int ClockTimer::GetSecond() { 
-    return GetTimeNow_C()->tm_sec;
+int ClockTimer::GetSecond() {
+  return second_;
 }

@@ -7,15 +7,15 @@ class Observer;
 
 class Subject {
 public:
-    virtual ~Subject() {}
+  virtual ~Subject() {}
 
-    virtual void Attach(Observer*);
-    virtual void Detach(Observer*);
-    virtual void Notify();
+  virtual void Attach(Observer*);
+  virtual void Detach(Observer*);
+  virtual void Notify();
 protected:
-    Subject() {}
+  Subject() {}
 private:
-    std::list<Observer*> _observers;
+  std::list<Observer*> observers_;
 };
 
 #endif /* SUBJECT_H */

@@ -3,27 +3,23 @@
 #include <iostream>
 
 AnalogClock::AnalogClock (ClockTimer* s) {
-    _subject = s;
-    _subject->Attach(this);
+  subject_ = s;
+  subject_->Attach(this);
 }
 
 AnalogClock::~AnalogClock () {
-    _subject->Detach(this);
+  subject_->Detach(this);
 }
 
 void AnalogClock::Update (Subject* theChangedSubject) {
-    if (theChangedSubject == _subject) {
-        Draw();
-    }
+  if (theChangedSubject == subject_) {
+    Draw();
+  }
 }
 
 void AnalogClock::Draw () {
-    // get the new values from the subject
-
-    int hour = _subject->GetHour();
-    int minute = _subject->GetMinute();
-    int second = _subject->GetSecond();
-
-    // draw the digital clock
-    std::cout << "Analog clock: " << hour << ":" << minute << ":" << second << std::endl;
+  int hour = subject_->GetHour();
+  int minute = subject_->GetMinute();
+  int second = subject_->GetSecond();
+  std::cout << "Analog clock: " << hour << ":" << minute << ":" << second << std::endl;
 }

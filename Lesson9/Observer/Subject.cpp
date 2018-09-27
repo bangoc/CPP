@@ -2,20 +2,20 @@
 #include "Observer.h"
 
 void Subject::Attach (Observer* o) {
-    _observers.push_back(o);
+  observers_.push_back(o);
 }
 
 void Subject::Detach (Observer* o) {
-    for (auto it =_observers.begin(); it != _observers.end(); ++it) {
-        if (*it == o) {
-            _observers.erase(it);
-            break;
-        }
+  for (auto it =observers_.begin(); it != observers_.end(); ++it) {
+    if (*it == o) {
+      observers_.erase(it);
+      break;
     }
+  }
 }
 
 void Subject::Notify () {
-    for (auto& it: _observers) {
-        it->Update(this);
-    }
+  for (auto& it: observers_) {
+    it->Update(this);
+  }
 }

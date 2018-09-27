@@ -1,25 +1,26 @@
-#include "DigitalClock.h"
+#include "MyClock.h"
 #include "ClockTimer.h"
 #include <iostream>
 
-DigitalClock::DigitalClock (ClockTimer* s) {
+MyClock::MyClock (ClockTimer* s) {
   subject_ = s;
   subject_->Attach(this);
 }
 
-DigitalClock::~DigitalClock () {
+MyClock::~MyClock () {
   subject_->Detach(this);
 }
 
-void DigitalClock::Update (Subject* the_changed_subject) {
+void MyClock::Update (Subject* the_changed_subject) {
   if (the_changed_subject == subject_) {
     Draw();
   }
 }
 
-void DigitalClock::Draw () {
+void MyClock::Draw () {
   int hour = subject_->GetHour();
   int minute = subject_->GetMinute();
   int second = subject_->GetSecond();
-  std::cout << "Digital clock: -[" << hour << ":" << minute << ":" << second << "]-" << std::endl;
+
+  std::cout << "My clock: " << hour << ":" << minute << ":" << second << std::endl;
 }

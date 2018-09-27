@@ -7,9 +7,7 @@ set(observer_SRCS
     ClockTimer.cpp
     AnalogClock.cpp
     DigitalClock.cpp
+    MyClock.cpp
     Subject.cpp)
 
-add_library(observer_pattern STATIC ${observer_SRCS})
-
-add_executable(observer observer_main.cpp)
-target_link_libraries(observer observer_pattern)
+add_executable(observer observer_main.cpp ${observer_SRCS})

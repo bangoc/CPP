@@ -8,13 +8,13 @@ class ClockTimer;
 
 class AnalogClock : public Widget, public Observer {
 public:
-    AnalogClock(ClockTimer*);
-    ~AnalogClock();
-    virtual void Update(Subject*);
-    virtual void Draw();
-    // ...
+  AnalogClock(ClockTimer*);
+  ~AnalogClock();
+  void Update(Subject*) override;
+  void Draw() override;
+  // ...
 private:
-    ClockTimer* _subject;
+  ClockTimer* subject_;
 };
 
 #endif /* ANALOG_CLOCK_H */
