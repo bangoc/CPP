@@ -1,6 +1,8 @@
 /*
- Mẫu Decorator hướng đến khả năng mở rộng trách nhiệm của đối tượng trong thời gian chạy chương trình.
-    Mẫu Decorator cung cấp một giải pháp mềm dẻo thay thế cho việc kế thừa để mở rộng chức năng của lớp.
+ Mẫu Decorator hướng đến khả năng mở rộng trách nhiệm của đối tượng trong
+ thời gian chạy chương trình.
+ Mẫu Decorator cung cấp một giải pháp mềm dẻo thay thế cho việc kế thừa để
+ mở rộng chức năng của lớp.
  */
 
 #include "BorderDecorator.h"
@@ -9,22 +11,24 @@
 #include "Window.h"
 
 int main() {
-    Window* window = new Window;
-    TextView* textView = new TextView;
+  Window* window1 = new Window {
+    new BorderDecorator{
+      new ScrollDecorator{new TextView}, 1
+    }, "1: TextView with border and a scroll"
+  };
+  window1->Draw();
 
-    window->SetContents(
-        new BorderDecorator(
-            new ScrollDecorator(textView), 1
-        )
-    );
+  Window* window2 = new Window {
+    new ScrollDecorator(new TextView), "2: TextView with a scroll"
+  };
+  window2->Draw();
 
-    window->Draw();
+  Window* window3 = new Window {
+    new BorderDecorator(new TextView, 3), "3: TextView with border"
+  };
+  window3->Draw();
 
-    TextView* textView2 = new TextView;
-    VisualComponent* component2 = new ScrollDecorator(textView);
-    component2->Draw();
-
-    TextView* textView3 = new TextView;
-    VisualComponent* component3 = new BorderDecorator(textView, 3);
-    component3->Draw();
+  delete window1;
+  delete window2;
+  delete window3;
 }

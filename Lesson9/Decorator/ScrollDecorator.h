@@ -5,12 +5,11 @@
 
 class ScrollDecorator : public Decorator {
 public:
-    ScrollDecorator(VisualComponent*);
-    virtual void Draw();
-    void ScrollTo();
+  ScrollDecorator(VisualComponent*);
+  void Draw() override;
+  ~ScrollDecorator() override;
 private:
-    void DrawScroll();
-    double scroll_position_;
+  void DrawScroll();
 };
 
 #endif /* SCROLL_DECORATOR_H */

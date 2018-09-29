@@ -6,10 +6,14 @@ ScrollDecorator::ScrollDecorator(VisualComponent* component)
 {}
 
 void ScrollDecorator::Draw() {
-    Decorator::Draw();
-    DrawScroll();
+  Decorator::Draw();
+  DrawScroll();
 }
 
 void ScrollDecorator::DrawScroll() {
-    std::cout << "ScrollDecorator::DrawScroll" << std::endl;
+  std::cout << "ScrollDecorator::DrawScroll" << std::endl;
+}
+
+ScrollDecorator::~ScrollDecorator() {
+  std::cout << "ScrollDecorator D'tor" << std::endl;
 }

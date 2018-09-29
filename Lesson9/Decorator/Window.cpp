@@ -1,10 +1,21 @@
 #include "Window.h"
 #include "VisualComponent.h"
 
-void Window::SetContents(VisualComponent* contents) {
-    _contents = contents;
+#include <iostream>
+
+Window::Window(VisualComponent* contents, const std::string& title)
+  : Decorator{contents}, title_{title} {
 }
 
 void Window::Draw() {
-    _contents->Draw();
+  Decorator::Draw();
+  DrawWindow();
+}
+
+void Window::DrawWindow() {
+  std::cout << "| Draw Window: " << title_ << " [X] |" << std::endl;
+}
+
+Window::~Window() {
+  std::cout << title_ << " D'tor" << std::endl;
 }

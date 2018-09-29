@@ -1,10 +1,7 @@
 #include "VisualComponent.h"
 
-VisualComponent::VisualComponent()
-{}
+#include <iostream>
 
-void VisualComponent::Draw()
-{}
-
-void VisualComponent::Resize()
-{}
+VisualComponent::~VisualComponent() {
+  std::cout << "VisualComponent D'tor" << std::endl;
+}

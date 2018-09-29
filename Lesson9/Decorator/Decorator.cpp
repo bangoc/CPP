@@ -1,13 +1,16 @@
 #include "Decorator.h"
 
+#include <iostream>
+
 Decorator::Decorator(VisualComponent* component)
-  : _component(component)
+  : component_(component)
 {}
 
 void Decorator::Draw() {
-    _component->Draw();
+  component_->Draw();
 }
 
-void Decorator::Resize() {
-    _component->Resize();
+Decorator::~Decorator() {
+  std::cout << "Decorator D'tor" << std::endl;
+  delete component_;
 }

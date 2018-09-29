@@ -5,13 +5,11 @@
 
 class Decorator : public VisualComponent {
 public:
-    Decorator(VisualComponent*);
-
-    virtual void Draw();
-    virtual void Resize();
-    // ...
+  Decorator(VisualComponent*);
+  void Draw() override;
+  ~Decorator() override;
 private:
-    VisualComponent* _component;
+  VisualComponent* component_;
 };
 
 #endif /* DECORATOR_H */

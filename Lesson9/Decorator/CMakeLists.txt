@@ -5,12 +5,9 @@ set(decorator_SRCS
     BorderDecorator.cpp
     Decorator.cpp
     ScrollDecorator.cpp
+    TextView.cpp
     VisualComponent.cpp
     Window.cpp
-    TextView.cc)
+   )
 
-add_library(decorator STATIC ${decorator_SRCS})
-
-add_executable(decorator1 decorator1.cpp)
-
-target_link_libraries(decorator1 decorator)
+add_executable(decorator1 decorator1.cpp ${decorator_SRCS})

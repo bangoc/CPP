@@ -6,6 +6,7 @@
 class TextView : public VisualComponent {
 public:
   void Draw() override;
+  ~TextView() override;
 };
 
 #endif /* TEXT_VIEW_H */

@@ -5,13 +5,13 @@
 
 class BorderDecorator : public Decorator {
 public:
-    BorderDecorator(VisualComponent*, int borderWidth);
-
-    virtual void Draw();
+  BorderDecorator(VisualComponent*, int);
+  void Draw() override;
+  ~BorderDecorator() override;
 private:
-    void DrawBorder(int);
+  void DrawBorder(int);
 private:
-    int _width;
+  int width_;
 };
 
 #endif /* BORDER_DECORATOR_H */

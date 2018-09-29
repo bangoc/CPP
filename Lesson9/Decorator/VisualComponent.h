@@ -3,11 +3,8 @@
 
 class VisualComponent {
 public:
-    VisualComponent();
-
-    virtual void Draw();
-    virtual void Resize();
-    // ...
+    virtual void Draw() = 0;
+    virtual ~VisualComponent();
 };
 
 #endif /* VISUAL_COMPONENT_H */
