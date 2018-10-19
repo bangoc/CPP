@@ -13,18 +13,7 @@
 
 class NYPizzaStore: public PizzaStore {
  public:
-  std::unique_ptr<Pizza> CreatePizza(const std::string& item) override {
-    std::unique_ptr<Pizza> pizza{nullptr};
-    std::unique_ptr<PizzaIngredientFactory> ingredient_factory{new NYPizzaIngredientFactory};
-    if (item == "cheese") {
-      pizza = std::make_unique<CheesePizza>(std::move(ingredient_factory));
-      pizza->SetName("New York Style cheese pizza");
-    } else if (item == "clams") {
-      pizza = std::make_unique<ClamsPizza>(std::move(ingredient_factory));
-      pizza->SetName("New York Style clams pizza");
-    }
-    return pizza;
-  }
+  std::unique_ptr<Pizza> CreatePizza(const std::string& item) override;
 };
 
 #endif  // NY_PIZZA_STORE_H_

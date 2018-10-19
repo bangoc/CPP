@@ -5,9 +5,7 @@
 
 class SlicedPepperoni: public Pepperoni {
  public:
-  SlicedPepperoni() {
-    name_ = "Sliced pepperoni";
-  }
+  SlicedPepperoni();
 };
 
 #endif  // SLICED_PEPPERONI_H_

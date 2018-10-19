@@ -5,9 +5,7 @@
 
 class PlumTomatoSauce: public Sauce {
  public:
-  PlumTomatoSauce() {
-    name_ = "Plum tomato sauce";
-  }
+  PlumTomatoSauce();
 };
 
 #endif  // PLUM_TOMATO_SAUCE_H_

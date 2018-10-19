@@ -5,9 +5,7 @@
 
 class NYStylePepperoniPizza: public Pizza {
  public:
-  NYStylePepperoniPizza() {
-    name_ = "New York Style Pepperoni Pizaa";
-  }
+  NYStylePepperoniPizza();
 };
 
 #endif  // NY_STYLE_PEPPERONI_PIZZA_H_

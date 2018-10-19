@@ -5,9 +5,7 @@
 
 class EggPlant: public Veggies {
  public:
-  EggPlant() {
-    name_ = "Egg plant";
-  }
+  EggPlant();
 };
 
 #endif  // EGG_PLANT_H_

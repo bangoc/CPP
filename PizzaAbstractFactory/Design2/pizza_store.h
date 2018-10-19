@@ -8,14 +8,7 @@
 
 class PizzaStore {
  public:
-  std::unique_ptr<Pizza> OrderPizza(const std::string& type) {
-    std::unique_ptr<Pizza> pizza = CreatePizza(type);
-    pizza->Prepare();
-    pizza->Bake();
-    pizza->Cut();
-    pizza->Box();
-    return pizza;
-  }
+  std::unique_ptr<Pizza> OrderPizza(const std::string& type);
   virtual std::unique_ptr<Pizza> CreatePizza(const std::string& type) = 0;
 };
 

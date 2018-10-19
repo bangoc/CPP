@@ -5,9 +5,7 @@
 
 class ReggianoCheese: public Cheese {
  public:
-  ReggianoCheese() {
-    name_ = "Reggiano cheese";
-  }
+  ReggianoCheese();
 };
 
 #endif  // REGGIANO_CHEESE_H_

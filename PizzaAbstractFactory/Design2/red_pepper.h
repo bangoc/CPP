@@ -5,9 +5,7 @@
 
 class RedPepper: public Veggies {
  public:
-  RedPepper() {
-    name_ = "Red pepper";
-  }
+  RedPepper();
 };
 
 #endif  // RED_PEPPER_H_

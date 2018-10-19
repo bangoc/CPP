@@ -5,9 +5,7 @@
 
 class BlackOlives: public Veggies {
  public:
-  BlackOlives() {
-    name_ = "Black olives";
-  }
+  BlackOlives();
 };
 
 #endif  // BLACK_OLIVES_H_

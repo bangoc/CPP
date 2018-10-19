@@ -6,9 +6,7 @@
 
 class Ingredient {
  public:
-  std::string name() {
-    return name_;
-  }
+  std::string name();
  protected:
   std::string name_ = "Unknown ingredient";
 };

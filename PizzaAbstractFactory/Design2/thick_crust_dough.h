@@ -5,9 +5,7 @@
 
 class ThickCrustDough: public Dough {
  public:
-  ThickCrustDough() {
-    name_ = "Thick crust dough";
-  }
+  ThickCrustDough();
 };
 
 #endif  // THICK_CRUST_DOUGH_H_

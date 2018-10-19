@@ -5,9 +5,7 @@
 
 class Garlic: public Veggies {
  public:
-  Garlic() {
-    name_ = "Garlic";
-  }
+  Garlic();
 };
 
 #endif  // GARLIC_H_

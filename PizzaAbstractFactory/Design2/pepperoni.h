@@ -4,7 +4,6 @@
 #include "ingredient.h"
 
 class Pepperoni: public Ingredient {
-
 };
 
 #endif  // PEPPERONI_H_

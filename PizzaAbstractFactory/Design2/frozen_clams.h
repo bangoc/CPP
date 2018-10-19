@@ -5,9 +5,7 @@
 
 class FrozenClams: public Clams {
  public:
-  FrozenClams() {
-    name_ = "Frozen clams";
-  }
+  FrozenClams();
 };
 
 #endif  // FROZEN_CLAMS_H_

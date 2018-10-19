@@ -5,9 +5,7 @@
 
 class MarinaraSauce: public Sauce {
  public:
-  MarinaraSauce() {
-    name_ = "Marinara sauce";
-  }
+  MarinaraSauce();
 };
 
 #endif  // MARINARA_SAUCE_H_

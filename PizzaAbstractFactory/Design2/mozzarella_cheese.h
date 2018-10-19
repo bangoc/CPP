@@ -5,9 +5,7 @@
 
 class MozzarellaCheese: public Cheese {
  public:
-  MozzarellaCheese() {
-    name_ = "Mozzarella cheese";
-  }
+  MozzarellaCheese();
 };
 
 #endif  // MOZZARELLA_CHEESE_H_

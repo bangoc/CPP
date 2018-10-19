@@ -17,30 +17,14 @@
 
 class Pizza {
  public:
-  Pizza(std::unique_ptr<PizzaIngredientFactory> ingredient_factory)
-      : ingredient_factory_{std::move(ingredient_factory)} {}
-
+  Pizza(std::unique_ptr<PizzaIngredientFactory> ingredient_factory);
   virtual void Prepare() = 0;
+  void Bake();
+  void Cut();
+  void Box();
+  void SetName(const std::string& name);
+  std::string name();
 
-  void Bake() {
-    std::cout << "Bake for 25 minutes at 350" << std::endl;
-  }
-
-  void Cut() {
-    std::cout << "Cutting the pizza into diagonal slices" << std::endl;
-  }
-
-  void Box() {
-    std::cout << "Place pizza in official PizzaStore box" << std::endl;
-  }
-
-  void SetName(const std::string& name) {
-    name_ = name;
-  }
-
-  std::string name() {
-    return name_;
-  }
  protected:
   std::string name_;
   std::unique_ptr<Dough> dough_;

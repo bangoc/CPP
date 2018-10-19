@@ -5,9 +5,7 @@
 
 class ChicagoStyleClamPizza: public Pizza {
  public:
-  ChicagoStyleClamPizza() {
-    name_ = "Chicago Style Clam Pizza";
-  }
+  ChicagoStyleClamPizza();
 };
 
 #endif  // CHICAGO_STYLE_CLAM_PIZZA_H_

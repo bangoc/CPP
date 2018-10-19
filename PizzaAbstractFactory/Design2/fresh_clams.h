@@ -5,9 +5,7 @@
 
 class FreshClams: public Clams {
  public:
-  FreshClams() {
-    name_ = "Fresh clams";
-  }
+  FreshClams();
 };
 
 #endif  // FRESH_CLAMS_H_
